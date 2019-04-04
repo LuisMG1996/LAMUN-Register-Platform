@@ -1,10 +1,4 @@
-<?php
-//Step1
- $db = mysqli_connect('localhost','root','','lamun')
- or die('Error connecting to MySQL server.');
 
- echo("Hola")
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +14,9 @@
     <h1>LAMUN XXXII</h1>
     <p>Formato de Registro para participantes</p>
     <div>
-        <form>
-            <input type="text" placeholder="Nombre(s)">
-            <input type="text" placeholder="Apellidos">
+        <form method="post" action="connection.php">
+            <input type="text" id = "nombre" name="nombre" placeholder="Nombre(s)">
+            <input type="text" id = "apellidos" name="apellidos" placeholder="Apellidos">
             <label>Edad</label>
             <select name="Age">
                 <option value="15">15</option>
@@ -47,7 +41,7 @@
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select>
-            <input type="email" placeholder="Correo Electronico">
+            <input type="email" name="correo" placeholder="Correo Electronico">
             <label>Tipo de Sangre</label>
             <select name="sangre">
                     <option value="A+">A+</option>
@@ -59,17 +53,18 @@
                     <option value="O-">O-</option>
                     <option value="O+">O+</option>
             </select>
-            <input type="text" placeholder="Escuela">
-            <textarea  placeholder="Alergias y/o Situación Medica"></textarea>
+            <input type="text" name="escuela" placeholder="Escuela">
+            <textarea name="alergias" placeholder="Alergias y/o Situación Medica"></textarea>
             <select name="delegacion">
                 <option value = "1">Delegacion1</option>
-                <option value = "1">Delegacion2</option>
+                <option value = "2">Delegacion2</option>
             </select>
             <select name="pais">
                     <option value = "mexico">México</option>
                     <option value = "usa">USA</option>
                 </select>
-            <input type="button" value="Insertar">
+            <input type="submit" name="submit" value="Insertar"/>
+           
         </form>
     </div>
 </body>
